@@ -1,7 +1,4 @@
 import { createRoot } from "react-dom/client";
-import Counter from "./App";
+import Practice from "./PracticeFile";
 
-
-createRoot(document.getElementById("root")).render(
-  <Counter/>
-);
+createRoot(document.getElementById("root")).render(<Practice />);
