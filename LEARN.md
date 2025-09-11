@@ -90,3 +90,73 @@ function Car() {
 ```
 
 Learn in details about [React JSX Expressions](https://www.w3schools.com/react/react_jsx_expressions.asp)
+
+## React JSX Attributes
+
+Here class attribute is used as className.
+
+### Usage
+
+- Expressions as Attributes
+
+  You can use JavaScript expressions as attribute values. This is very useful for dynamic attributes.
+
+  ```js
+  function Car() {
+    const x = "myclass";
+    return (
+      <h1 className={x}>Hello World</h1>
+    );
+  }
+  ```
+
+- camelCase Event Attributes
+
+  Event attributes in JSX are written in camelCase.
+
+  ```js
+  function Car() {
+    const myfunc = () => {
+      alert('Hello World');
+    };
+    return (
+      <button onClick={myfunc}>Click me</button>
+    );
+  }
+  ```
+
+- Boolean Attributes
+
+  If you pass no value for an attribute, JSX treats it as true. To pass false, you must specify it as an expression.
+
+  Boolean true in JSX, this will make the button disabled:
+
+  ```js
+  <button onClick={myfunc} disabled={true}>Click me</button>
+  ```
+
+  False in JSX, this will NOT make the button disabled:
+
+  ```js
+  <button onClick={myfunc} disabled={false}>Click me</button>
+  ```
+
+- The style Attribute
+
+  The style attribute in JSX only accepts a JavaScript object with camelCased CSS property names, rather than a CSS string (as in HTML).
+
+  ```js
+  function Car() {
+    const mystyles = {
+      color: "red",
+      fontSize: "20px",
+      backgroundColor: "lightyellow",
+    };
+
+    return (
+      <>
+        <h1 style={mystyles}>My car</h1>
+      </>
+    );
+  }
+  ```
