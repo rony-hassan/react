@@ -160,3 +160,32 @@ Here class attribute is used as className.
     );
   }
   ```
+
+## [React JSX If Statements](https://www.w3schools.com/react/react_jsx_if_statements.asp)
+
+## React Components
+
+> Components are like functions that return HTML elements.</br> There are two types:
+
+1. Class Components
+2. Function Components
+
+### Function Component
+
+- **First Component:**
+
+  ```js
+  function Car() {
+    return (
+      <h2>Hi, I am a Car!</h2>
+    );
+  }
+  ```
+
+- **Rendering the compoent:**
+
+  ```js
+  createRoot(document.getElementById('root')).render(
+    <Car />
+  )
+  ```
