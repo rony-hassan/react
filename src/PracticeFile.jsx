@@ -1,34 +1,42 @@
+// React Class Component State
+
+// Creating the state object
 import React from "react";
-/*
-function Practice() {
-
-  const headerstyle = {
-    color: 'red',
-    backgroundColor: 'lightblue'
-  }
-
-  const myElement = (
-    <>
-      <h1 style={headerstyle}>Hello World!</h1>
-      <p>My Name is Rony</p>
-      <input type="text" />
-    </>
-  );
-
-  return myElement;
-}
-
-export default Practice;
-*/
 
 class Practice extends React.Component {
   constructor() {
     super();
-    this.state = { color: "red" };
+    // The state object can contain as many properties as user like
+
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964,
+    };
   }
 
+  // Changing the state object
+  /* Always use the setState() method to change the state object, it will ensure that the component knows its been updated and calls the render() method (and all the other lifecycle methods). */
+
+  changeColor = () => {
+    this.setState(
+      this.state.color == "red" ? { color: "blue" } : { color: "red" }
+    );
+  };
+
   render() {
-    return <h2>Color of my car is {this.state.color}</h2>;
+    return (
+      <div>
+        <h1>My {this.state.brand}</h1>
+        <p>
+          It is a {this.state.color} {this.state.model} from {this.state.year}.
+        </p>
+        <button type="button" onClick={this.changeColor}>
+          Change color
+        </button>
+      </div>
+    );
   }
 }
 
