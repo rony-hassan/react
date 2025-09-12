@@ -182,10 +182,86 @@ Here class attribute is used as className.
   }
   ```
 
-- **Rendering the compoent:**
+- **Rendering the component:**
 
   ```js
   createRoot(document.getElementById('root')).render(
     <Car />
   )
   ```
+
+- **Props:**
+
+  ```js
+  function Car(props) {
+    return (
+      <h2>I am a {props.color} Car!</h2>
+    );
+  }
+
+  createRoot(document.getElementById('root')).render(
+    <Car color="red"/>
+  );
+  ```
+
+- **Components in Components:**
+
+  ```js
+  function Car() {
+    return (
+      <h2>I am a Car!</h2>
+    );
+  }
+
+  function Garage() {
+    return (
+      <>
+        <h1>Who lives in my Garage?</h1>
+        <Car />
+      </>
+    );
+  }
+
+  createRoot(document.getElementById('root')).render(
+    <Garage />
+  );
+  ```
+
+### Class Component
+
+> Before React 16.8, Class components were the only way to track state and lifecycle on a React component. Function components were considered "state-less".</br></br>With the addition of Hooks, Function components are now almost equivalent to Class components. The differences are so minor that you will probably never need to use a Class component in React.</br></br>The component has to include the extends React.Component statement, this statement creates an inheritance to React.Component, and gives your component access to React.Component's functions.
+
+- **Component Constructor**
+
+  ```js
+  class Car extends React.Component {
+    constructor() {
+      super();
+      this.state = {color: "red"};
+    }
+    render() {
+      return <h2>I am a {this.state.color} Car!</h2>;
+    }
+  }
+  ```
+
+- **Props in the Constructor**
+
+  > If your component has a constructor function, the props should always be passed to the constructor and also to the React.Component via the super() method.
+
+  ```js
+  class Car extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return <h2>I am a {this.props.model}!</h2>;
+    }
+  }
+
+  createRoot(document.getElementById('root')).render(
+    <Car model="Mustang"/>
+  );
+  ```
+
+To learn More about React Components and state object [Click React Class](https://www.w3schools.com/REACT/react_class.asp)

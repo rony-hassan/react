@@ -1,3 +1,5 @@
+import React from "react";
+/*
 function Practice() {
 
   const headerstyle = {
@@ -14,6 +16,20 @@ function Practice() {
   );
 
   return myElement;
+}
+
+export default Practice;
+*/
+
+class Practice extends React.Component {
+  constructor() {
+    super();
+    this.state = { color: "red" };
+  }
+
+  render() {
+    return <h2>Color of my car is {this.state.color}</h2>;
+  }
 }
 
 export default Practice;
