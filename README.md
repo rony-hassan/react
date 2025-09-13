@@ -21,3 +21,11 @@ If you are developing a production application, we recommend using TypeScript wi
 - [Spread Operator](https://www.w3schools.com/react/react_es6_spread.asp)
 - [Ternary Operator](https://www.w3schools.com/react/react_es6_ternary.asp)
 - [Template Strings](https://www.w3schools.com/react/react_es6_template_strings.asp)
+
+## Learning Path
+
+To find some relative resources [CLICK RESOURCE](LEARN.md)
+
+## LIFECYCLE OF COMPONENTS
+
+Here you will find the topics based on lifecycle of components in react [LIFECYCLE](LIFECYCLE.md)
