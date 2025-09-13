@@ -8,13 +8,23 @@ class Practice extends React.Component {
     this.state = { favouritecolor: "red" };
   }
 
-  componentDidMount() {
-    setTimeout(() =>
-    this.setState({favouritecolor: 'yellow'}),1000);
+  static getDerivedStateFromProps(props, state) {
+    return { favouritecolor: props.favcol };
   }
 
+  changeColor = () => {
+    this.setState({ favouritecolor: "blue" });
+  };
+
   render() {
-    return <h1>My favourite color is {this.state.favouritecolor}</h1>;
+    return (
+      <div>
+        <h1>My favourite color is {this.state.favouritecolor}</h1>
+        <button type="button" onClick={this.changeColor}>
+          Change
+        </button>
+      </div>
+    );
   }
 }
 
