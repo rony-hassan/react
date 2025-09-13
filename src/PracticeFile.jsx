@@ -1,7 +1,8 @@
 
 function Practice(props){
+  const {years, ...rest} = props
   return(
-    <p>{props.info.name} {props.info.model} was released in {props.years[0]}</p>
+    <p>{rest.info.name} {rest.info.model} was released in {years[0]}</p>
   )
 }
 

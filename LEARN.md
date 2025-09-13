@@ -268,7 +268,49 @@ To learn More about React Components and state object [Click React Class](https:
 
 ## Other Resources
 
-- [``React Props``](https://www.w3schools.com/react/react_props.asp)
+1. [``React Props``](https://www.w3schools.com/react/react_props.asp)
 
-  > React props can be of any data type, including variables, numbers, strings, objects, arrays, and more.</br></br>Strings can be sent inside quotes as in the examples above, but numbers, variables, and objects need to be sent inside `curly brackets`.</br></br>
-  > 📝 **Note:** React Props are read-only! You will get an error if you try to change their value.
+    > React props can be of any data type, including variables, numbers, strings, objects, arrays, and more.</br></br>Strings can be sent inside quotes as in the examples above, but numbers, variables, and objects need to be sent inside `curly brackets`.</br></br>
+    > 📝 **Note:** React Props are read-only! You will get an error if you try to change their value.
+
+2. [`React Destructuring Props`](https://www.w3schools.com/react/react_props_destructuring.asp)
+
+    📝 **Note:** You can limit the properties a component receives by using destructuring. React uses ``curly brackets`` to destructure props: {color}.
+
+    You can also destruct the properties you need inside the component.
+
+    This way, the component receives all the properties, but the destructuring makes sure it only uses the ones it needs.
+
+    ```js
+    function Car(props) {
+      const {brand, model} = props;
+      return (
+        <h2>I love my {brand} {model}!</h2>
+      );
+    }
+
+    createRoot(document.getElementById('root')).render(
+      <Car brand="Ford" model="Mustang" color="red" year={1969} />
+    );
+    ```
+
+    When you don't know how many properties you will receive, you can use the ``...rest`` operator.
+
+    Meaning: you can specify the properties you need, and the rest will be stored in an object.
+
+    Example:
+
+    The component specifies the color and the brand, but the rest is stored in an object like this:
+    ``{ model: "Mustang", year: 1969 }``.
+
+    ```js
+    function Car({color, brand, ...rest}) {
+      return (
+        <h2>My {brand} {rest.model} is {color}!</h2>
+      );
+    }
+
+    createRoot(document.getElementById('root')).render(
+      <Car brand="Ford" model="Mustang" color="red" year={1969} />
+    );
+    ```
