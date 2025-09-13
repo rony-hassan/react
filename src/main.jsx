@@ -1,4 +1,4 @@
 import { createRoot } from "react-dom/client";
-import Practice from "./PracticeFile";
+import App from "./App";
 
-createRoot(document.getElementById("root")).render(<Practice favcol = 'yellow' />);
+createRoot(document.getElementById("root")).render(<App />);

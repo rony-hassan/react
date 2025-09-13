@@ -1,10 +1,13 @@
-import { useState } from "react";
-export default Counter;
+import Practice from "./PracticeFile";
 
-// Destructering hook
-
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  return <button onClick={() => setCount(count + 1)}>Count: {count}</button>;
+let x = [1964,1965,1966]
+let y = {name: 'Ford', model: 'yz'}
+function App() {
+  return (
+    <div>
+      <Practice  years = {x} info = {y}/>
+    </div>
+  );
 }
+
+export default App;

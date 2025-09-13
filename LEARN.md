@@ -265,3 +265,10 @@ Here class attribute is used as className.
   ```
 
 To learn More about React Components and state object [Click React Class](https://www.w3schools.com/REACT/react_class.asp)
+
+## Other Resources
+
+- [``React Props``](https://www.w3schools.com/react/react_props.asp)
+
+  > React props can be of any data type, including variables, numbers, strings, objects, arrays, and more.</br></br>Strings can be sent inside quotes as in the examples above, but numbers, variables, and objects need to be sent inside `curly brackets`.</br></br>
+  > 📝 **Note:** React Props are read-only! You will get an error if you try to change their value.
